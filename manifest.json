@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "WAPHIDE",
+  "version": "1.0.0",
+  "description": "WhatsApp Web Privacy Extension designed by IDREESIB. Blur messages, profile pictures, media previews, and manage per-chat visibility.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "commands": {
+    "toggle-waphide": {
+      "suggested_key": {
+        "default": "Alt+X"
+      },
+      "description": "Toggle WAPHIDE privacy on/off"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

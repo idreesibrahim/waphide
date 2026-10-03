@@ -1,0 +1,76 @@
+/* Custom IDREESIB WAPHIDE Styling Rules */
+
+/* 1. Profile Pictures Blur */
+html.waphide-active.waphide-blur-avatars img[src*="dyn"],
+html.waphide-active.waphide-blur-avatars img[src*="pps"],
+html.waphide-active.waphide-blur-avatars div[data-tab="2"] img,
+html.waphide-active.waphide-blur-avatars header img,
+html.waphide-active.waphide-blur-avatars div[role="row"] img,
+html.waphide-active.waphide-blur-avatars div[style*="background-image"] {
+  filter: blur(12px) opacity(0.5) !important;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+html.waphide-active.waphide-blur-avatars img:hover,
+html.waphide-active.waphide-blur-avatars div[role="row"]:hover img {
+  filter: blur(0) opacity(1) !important;
+}
+
+/* 2. Last Message Previews in Chat List */
+html.waphide-active.waphide-blur-previews div[role="row"] span[title]:not([data-waphide-unlocked="true"]),
+html.waphide-active.waphide-blur-previews div[role="row"] div[title]:not([data-waphide-unlocked="true"]) {
+  filter: blur(8px) !important;
+  transition: filter 0.2s ease;
+}
+
+html.waphide-active.waphide-blur-previews div[role="row"]:hover span[title],
+html.waphide-active.waphide-blur-previews div[role="row"]:hover div[title] {
+  filter: blur(0) !important;
+}
+
+/* 3. Messages inside Active Chat */
+html.waphide-active.waphide-blur-messages div[data-tab="8"] div.message-in:not([data-waphide-unlocked="true"]) span.selectable-text,
+html.waphide-active.waphide-blur-messages div[data-tab="8"] div.message-out:not([data-waphide-unlocked="true"]) span.selectable-text {
+  filter: blur(7px) !important;
+  user-select: none !important;
+  transition: filter 0.2s ease;
+}
+
+html.waphide-active.waphide-blur-messages div[data-tab="8"] div.message-in:hover span.selectable-text,
+html.waphide-active.waphide-blur-messages div[data-tab="8"] div.message-out:hover span.selectable-text {
+  filter: blur(0) !important;
+  user-select: text !important;
+}
+
+/* 4. Media Previews (Images, Videos, Stickers, Voice Note Waves) */
+html.waphide-active.waphide-blur-media div[data-tab="8"] img,
+html.waphide-active.waphide-blur-media div[data-tab="8"] video,
+html.waphide-active.waphide-blur-media div[data-tab="8"] canvas,
+html.waphide-active.waphide-blur-media div[data-tab="8"] div[style*="background-image"] {
+  filter: blur(16px) !important;
+  transition: filter 0.2s ease;
+}
+
+html.waphide-active.waphide-blur-media div[data-tab="8"] img:hover,
+html.waphide-active.waphide-blur-media div[data-tab="8"] video:hover,
+html.waphide-active.waphide-blur-media div[data-tab="8"] canvas:hover {
+  filter: blur(0) !important;
+}
+
+/* WAPHIDE Toggle Lock/Eye Button Injection */
+.waphide-eye-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 14px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.waphide-eye-btn:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
